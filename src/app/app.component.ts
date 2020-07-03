@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private title: Title, private http: HttpClient){
+  constructor(public title: Title, private http: HttpClient){
     this.http.get("https://os-sagarvd-me.github.io/api-sample/index.json").subscribe( (data: any) => {
       console.log(data);
     })
