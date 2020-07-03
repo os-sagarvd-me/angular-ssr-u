@@ -43,13 +43,12 @@ app.set('views', DIST_FOLDER);
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
 // Serve static files from /browser
-// app.get('*.*', express.static(DIST_FOLDER, {
-//   maxAge: '1y'
-// }));
+app.get('*.*', express.static(DIST_FOLDER, {
+  maxAge: '1y'
+}));
 
 // All regular routes use the Universal engine
-app.get('*', (req, res) => {
-  console.log(req);
+app.get('**', (req, res) => {
   res.render('index', { req });
 });
 
