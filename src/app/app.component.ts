@@ -11,7 +11,8 @@ export class AppComponent {
   constructor(public title: Title, private http: HttpClient){
     this.http.get("https://us-central1-angular-ssr-u.cloudfunctions.net/api/").subscribe( (data: any) => {
       console.log(data);
-    })
+    }),
+    error => console.log(error);
     this.title.setTitle("Hello");
   }
 }
