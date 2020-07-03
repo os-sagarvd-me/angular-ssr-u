@@ -10,12 +10,11 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   constructor(public title: Title, private http: HttpClient){
     this.http.get("https://us-central1-angular-ssr-u.cloudfunctions.net/api/").subscribe( (data: any) => {
-      console.log(data);
+      this.title.setTitle(data.title);
     }),
     error => {
       console.log("error");
       console.log(error);
     }
-    this.title.setTitle("Hello");
   }
 }
