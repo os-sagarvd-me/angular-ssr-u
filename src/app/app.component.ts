@@ -12,7 +12,10 @@ export class AppComponent {
     this.http.get("https://us-central1-angular-ssr-u.cloudfunctions.net/api/").subscribe( (data: any) => {
       console.log(data);
     }),
-    error => console.log(error);
+    error => {
+      console.log("error");
+      console.log(error);
+    }
     this.title.setTitle("Hello");
   }
 }
