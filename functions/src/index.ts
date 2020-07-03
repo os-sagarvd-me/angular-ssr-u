@@ -8,4 +8,6 @@
 // });
 const functions = require('firebase-functions');
 const universal = require(`${process.cwd()}/dist/server.js`).app;
+import { auth } from './api';
+exports.api = functions.https.onRequest(auth);
 exports.ssr = functions.https.onRequest(universal)

@@ -22,5 +22,4 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: './node_modules/.bin/firebase deploy --only hosting --token=$FirebaseToken'
-      - run: './node_modules/.bin/firebase deploy --only functions:ssr --token=$FirebaseToken'
+      - run: './node_modules/.bin/firebase deploy --token=$FirebaseToken'
