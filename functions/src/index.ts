@@ -6,8 +6,9 @@
 // export const helloWorld = functions.https.onRequest((request, response) => {
 //  response.send("Hello from Firebase!");
 // });
-const functions = require('firebase-functions');
-const universal = require(`${process.cwd()}/dist/server.js`).app;
+
 import { auth } from './api';
+const functions = require('firebase-functions');
+const universal = require(`${process.cwd()}/dist/server`).app;
 exports.api = functions.https.onRequest(auth);
 exports.ssr = functions.https.onRequest(universal)
