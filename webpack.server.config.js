@@ -11,7 +11,7 @@ module.exports = {
   },
   externals: [
     {
-      './dist/server/main': 'require("./server/main")'
+      './dist/server/main': './server/main'
     },
     /^firebase/
   ],
