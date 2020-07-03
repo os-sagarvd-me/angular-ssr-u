@@ -49,6 +49,7 @@ app.set('views', DIST_FOLDER);
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
+  console.log(req);
   res.render('index', { req });
 });
 
